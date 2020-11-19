@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.re.kitri.hello.dao.UserDao">
+    <select id="selectAllUsers" resultType="kr.re.kitri.hello.model.User">
+        select  user_id as userId,
+                name,
+                point,
+                email
+        from    public.user
+    </select>
+    <select id="selectUserByUserId" parameterType="java.lang.String"
+                                    resultType="kr.re.kitri.hello.model.User">
+        select  user_id as userId,
+                name,
+                point,
+                email
+        from    public.user
+        where   user_id = #{userId}
+    </select>
+    <insert id="insertUser" parameterType="kr.re.kitri.hello.model.User">
+        insert into public.user (user_id, name, point, email)
+        values (#{userId}, #{name}, #{point}, #{email})
+    </insert>
+</mapper>

@@ -15,7 +15,8 @@ public class UserService {
 
     // 회원가입
     public User registerUser(User user) {
-        return userDao.insertUser(user);
+        userDao.insertUser(user);
+        return user;
     }
 
     // 회원 전체보기
