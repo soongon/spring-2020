@@ -3,6 +3,8 @@ package kr.re.kitri.hello.dao;
 import kr.re.kitri.hello.model.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class UserDao {
 
@@ -12,5 +14,13 @@ public class UserDao {
         // insert 수행 후...
 
         return user;
+    }
+
+    public List<User> selectAllUsers() {
+        return null;
+    }
+
+    public User selectUserByUserId(String userId) {
+        return null;
     }
 }

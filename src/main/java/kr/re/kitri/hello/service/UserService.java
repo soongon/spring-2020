@@ -20,11 +20,11 @@ public class UserService {
 
     // 회원 전체보기
     public List<User> getAllUsers() {
-        return null;
+        return userDao.selectAllUsers();
     }
 
     // 회원 상세보기
     public User getUserByUserId(String userId) {
-        return null;
+        return userDao.selectUserByUserId(userId);
     }
 }

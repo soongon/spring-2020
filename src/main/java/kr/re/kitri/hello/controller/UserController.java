@@ -21,11 +21,11 @@ public class UserController {
     // 회원 전체 조회
     @GetMapping("/users")
     public List<User> viewAllUsers() {
-        return null;
+        return userService.getAllUsers();
     }
     // 회원 상세 조회
     @GetMapping("/users/{userId}")
     public User viewUserByUserId(@PathVariable String userId) {
-        return null;
+        return userService.getUserByUserId(userId);
     }
 }
