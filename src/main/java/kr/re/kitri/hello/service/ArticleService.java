@@ -24,6 +24,7 @@ public class ArticleService {
     }
 
     public Article addArticle(Article article) {
+
         articleDao.insertArticle(article);
         return article;
     }

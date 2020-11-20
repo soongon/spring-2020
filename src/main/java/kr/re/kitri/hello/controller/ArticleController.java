@@ -21,12 +21,14 @@ public class ArticleController {
     // 프론트엔드에서 작성된(생성된) 데이터를 확보..
     @PostMapping("/articles")
     public Article writeArticle(@RequestBody Article article) {
+
         log.debug(article.toString());
         return articleService.addArticle(article);
     }
 
     @GetMapping("/articles")
     public List<Article> viewAllArticles() {
+
         return articleService.getAllArticles();
     }
 
