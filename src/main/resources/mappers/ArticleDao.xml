@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.re.kitri.hello.dao.ArticleDao">
+    <select id="selectAllArticles" resultType="kr.re.kitri.hello.model.Article">
+        select  article_id as articleId,
+                title,
+                content,
+                author,
+                likes
+        from    article;
+    </select>
+    <select id="selectArticleById" parameterType="java.lang.String"
+            resultType="kr.re.kitri.hello.model.Article">
+        select  article_id as articleId,
+                title,
+                content,
+                author,
+                likes
+        from    article
+        where   article_id = #{articleId};
+    </select>
+    <insert id="insertArticle" parameterType="kr.re.kitri.hello.model.Article">
+        insert into article (article_id, title, content, author, likes)
+        values (#{articleId}, #{title}, #{content}, #{author}, #{likes});
+    </insert>
+</mapper>
